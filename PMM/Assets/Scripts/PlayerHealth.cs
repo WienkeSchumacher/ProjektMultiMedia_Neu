@@ -22,7 +22,9 @@ public class PlayerHealth : MonoBehaviour
     {
   
             TakeDamage();
-        
+        //HealPlayer();
+
+
     }
 
     void TakeDamage()
@@ -30,5 +32,19 @@ public class PlayerHealth : MonoBehaviour
         currentHealth -= Time.deltaTime * 2;
 
         healthBar.SetHealth(currentHealth);
+    }
+
+
+    void OnTriggerEnter(Collider item)
+    {
+        if(item.gameObject.tag == "playerhealthBottle")
+        {
+            currentHealth += currentHealth + 10;
+
+            if (currentHealth > maxHealth)
+            {
+                currentHealth = maxHealth;
+            }
+        }
     }
 }

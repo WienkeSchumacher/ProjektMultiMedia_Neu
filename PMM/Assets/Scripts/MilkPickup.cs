@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography;
 using UnityEngine;
 
 public class MilkPickup : MonoBehaviour
@@ -28,7 +27,6 @@ public class MilkPickup : MonoBehaviour
             FindObjectOfType<GameManager>().AddMilk(value);
 
             Instantiate(pickupEffect, transform.position, transform.rotation);
-
             Destroy(gameObject);
         }
     }
