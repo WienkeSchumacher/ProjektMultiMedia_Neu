@@ -1,5 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Runtime.InteropServices;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
@@ -10,11 +13,18 @@ public class PlayerHealth : MonoBehaviour
 
     public HealthBar healthBar;
 
+    //private bool isRespawning;
+    //private Vector3 respawnPoint;
+    //private Transform SpawnPoint;
+    public GameObject SpawnPoint;
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+
+
+        
     }
 
     // Update is called once per frame
@@ -32,7 +42,23 @@ public class PlayerHealth : MonoBehaviour
         currentHealth -= Time.deltaTime * 2;
 
         healthBar.SetHealth(currentHealth);
+
+        //if(currentHealth <= 0)
+        //{
+        //    isRespawning = true;
+        //}
+        //else
+        //{
+        //    isRespawning = false;
+        //}
+
+        //if (isRespawning == true)
+        //{
+        //    Respawn();
+        //}
+    
     }
+
 
 
     void OnTriggerEnter(Collider item)
@@ -47,4 +73,10 @@ public class PlayerHealth : MonoBehaviour
             }
         }
     }
+
+    //public void Respawn()
+    //{
+    //    transform.position = SpawnPoint.
+    //    transform.position = SpawnPoint.position;
+    //}
 }
