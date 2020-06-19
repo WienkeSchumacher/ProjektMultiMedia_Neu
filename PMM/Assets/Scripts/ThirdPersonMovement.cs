@@ -15,6 +15,8 @@ public class ThirdPersonMovement : MonoBehaviour
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
 
+    public float force;
+
     private void Start()
     {
         cat = GetComponent<Rigidbody>();
@@ -47,7 +49,8 @@ public class ThirdPersonMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump"))
         {
-            cat.AddForce(new Vector3(0, 7, 3), ForceMode.Impulse);
+            cat.AddForce(0, force * Time.deltaTime, 0);
+           // cat.AddForce(new Vector3(0, 7, 3), ForceMode.Impulse);
             isOnGround = false;
         }
 
