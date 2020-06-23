@@ -43,6 +43,12 @@ public class PlayerHealth : MonoBehaviour
 
         healthBar.SetHealth(currentHealth);
 
+        // calls function RestartLevel in gamemanager when healthbar is empty
+        if(currentHealth < 1)
+        {
+            FindObjectOfType<GameManager>().EndGame();
+        }
+
         //if(currentHealth <= 0)
         //{
         //    isRespawning = true;

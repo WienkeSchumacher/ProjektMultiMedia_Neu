@@ -13,9 +13,16 @@ public class CheckRain : MonoBehaviour
 
     bool isInSafeArea;
 
+   
+
     // Update is called once per frame
     void Update()
     {
+        void OnTriggerEnter()
+        {
+            cat.GetComponent<PlayerHealth>().enabled = false;
+        }
+
         isInSafeArea = Physics.CheckSphere(SafeAreaCheck.position, safeRadius, playerMask);
 
         if(isInSafeArea)
@@ -25,5 +32,6 @@ public class CheckRain : MonoBehaviour
         else if(!isInSafeArea){
             cat.GetComponent<PlayerHealth>().enabled = true;
         }
+
     }
 }
