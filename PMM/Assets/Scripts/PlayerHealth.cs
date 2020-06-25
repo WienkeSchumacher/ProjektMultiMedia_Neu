@@ -48,20 +48,6 @@ public class PlayerHealth : MonoBehaviour
         {
             FindObjectOfType<GameManager>().EndGame();
         }
-
-        //if(currentHealth <= 0)
-        //{
-        //    isRespawning = true;
-        //}
-        //else
-        //{
-        //    isRespawning = false;
-        //}
-
-        //if (isRespawning == true)
-        //{
-        //    Respawn();
-        //}
     
     }
 
@@ -80,9 +66,5 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    //public void Respawn()
-    //{
-    //    transform.position = SpawnPoint.
-    //    transform.position = SpawnPoint.position;
-    //}
+    
 }

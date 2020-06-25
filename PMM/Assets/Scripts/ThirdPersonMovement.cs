@@ -16,6 +16,7 @@ public class ThirdPersonMovement : MonoBehaviour
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
 
+
     private void Start()
     {
         controller.Move(Vector3.down * 3 * Time.deltaTime);
@@ -64,16 +65,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
         }
 
-
-        // Jump
-
-        //if (Input.GetButtonDown("Jump"))
-        //{
-        //    cat.AddForce(0, force * Time.deltaTime, 0);
-        //    // cat.AddForce(new Vector3(0, 7, 3), ForceMode.Impulse);
-        //    isOnGround = false;
-        //}
-
+     
     }
 
     private void OnCollisionEnter(Collision col)
