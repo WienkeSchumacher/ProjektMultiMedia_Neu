@@ -36,10 +36,18 @@ public class Movement : MonoBehaviour{
             cat.AddForce(force * Time.deltaTime, 0, 0);
         }
 
+<<<<<<< HEAD
         if (Input.GetKey("space"))
         {
             //hier waren schon sehr viele verschiedene Versionen von Space bzw Jump. Keine hat funktioniert. Wir haben auch versucht die in dem anderen Skript(thirdperson) zu implementieren, jedoch hatte es keinen Effekt. Die Katze springt nicht egal wie viele verschiedene Versionen wir ausprobiert haben :(
             cat.AddForce(0, force * Time.deltaTime, 0);
         }
+=======
+        //if (Input.GetKey("space"))
+        //{
+        //    // Add a force to the left
+        //    cat.AddForce(0, force * Time.deltaTime, 0);
+        //}
+>>>>>>> seda
     }
 }

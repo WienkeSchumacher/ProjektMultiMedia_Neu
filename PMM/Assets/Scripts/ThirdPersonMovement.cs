@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 
 public class ThirdPersonMovement : MonoBehaviour
@@ -16,6 +17,10 @@ public class ThirdPersonMovement : MonoBehaviour
     public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
 
+    Vector3 velocity;
+    public float gravity = -9.81f;
+    public float jumpHight = 3f;
+        
 
     //Haben hier auch verschieden Versionen vom springen eingebaut. Dadurch das keine geklappt hat haben wir sie jedoch immer entfernt damit der Code weiterhin sauber und übersichtlich für uns bleibt.
 
@@ -66,6 +71,12 @@ public class ThirdPersonMovement : MonoBehaviour
 
 
         }
+
+
+        //if(Input.GetButtonDown("Jump") && isOnGround)
+        //{
+        //    velocity.y = Mathf.Sqrt(jumpHight * -2f * gravity);
+        //}
 
      
     }
