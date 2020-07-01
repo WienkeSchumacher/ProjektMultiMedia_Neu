@@ -17,6 +17,8 @@ public class ThirdPersonMovement : MonoBehaviour
     float turnSmoothVelocity;
 
 
+    //Haben hier auch verschieden Versionen vom springen eingebaut. Dadurch das keine geklappt hat haben wir sie jedoch immer entfernt damit der Code weiterhin sauber und übersichtlich für uns bleibt.
+
     private void Start()
     {
         controller.Move(Vector3.down * 3 * Time.deltaTime);
