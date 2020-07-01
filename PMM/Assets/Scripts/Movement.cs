@@ -36,10 +36,10 @@ public class Movement : MonoBehaviour{
             cat.AddForce(force * Time.deltaTime, 0, 0);
         }
 
-        if (Input.GetKey("space"))
-        {
-            // Add a force to the left
-            cat.AddForce(0, force * Time.deltaTime, 0);
-        }
+        //if (Input.GetKey("space"))
+        //{
+        //    // Add a force to the left
+        //    cat.AddForce(0, force * Time.deltaTime, 0);
+        //}
     }
 }
