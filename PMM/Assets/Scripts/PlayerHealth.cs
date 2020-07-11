@@ -13,6 +13,7 @@ public class PlayerHealth : MonoBehaviour
 
     public HealthBar healthBar;
 
+
     //private bool isRespawning;
     //private Vector3 respawnPoint;
     //private Transform SpawnPoint;
@@ -57,14 +58,22 @@ public class PlayerHealth : MonoBehaviour
     {
         if(item.gameObject.tag == "playerhealthBottle")
         {
-            currentHealth += currentHealth + 10;
-
-            if (currentHealth > maxHealth)
-            {
-                currentHealth = maxHealth;
-            }
+            Heal();
         }
     }
+
+
+    public void Heal()
+    {
+        Debug.Log(currentHealth);
+        currentHealth += currentHealth + 10;
+        Debug.Log(currentHealth);
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+    }
+
 
     
 }
