@@ -26,12 +26,18 @@ public class ThirdPersonMovement : MonoBehaviour
 
     private Vector3 direction = Vector3.zero;
 
+<<<<<<< HEAD
     //Haben hier auch verschieden Versionen vom springen eingebaut. Dadurch das keine geklappt hat haben wir sie jedoch immer entfernt damit der Code weiterhin sauber und übersichtlich für uns bleibt.
+=======
+    private Animator animator;
+>>>>>>> seda
 
     private void Start()
     {
 
         controller = gameObject.GetComponent<CharacterController>();
+
+        animator = GetComponent<Animator>();
 
         if (controller.isGrounded)
         {
@@ -70,6 +76,8 @@ public class ThirdPersonMovement : MonoBehaviour
 
         if (direction.magnitude >= 0.1f)
         {
+            animator.SetBool("isWalking", true);
+
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
@@ -79,17 +87,26 @@ public class ThirdPersonMovement : MonoBehaviour
             controller.Move(moveDir * speed * Time.deltaTime);
 
         }
+        else
+        {
+            animator.SetBool("isWalking", false);
+        }
 
         if (jumpVelocity != 0)
         {
+            animator.SetBool("isJumping", true);
+
             controller.Move(Vector3.up * jumpVelocity * Time.deltaTime);
 
             if (controller.isGrounded)
             {
+                animator.SetBool("isJumping", false);
+
                 jumpVelocity = 0.0f;
             }
         }
-        Debug.Log("Jumping: " + jumpVelocity);
+
+        //Debug.Log("Jumping: " + jumpVelocity);
 
 
     }
