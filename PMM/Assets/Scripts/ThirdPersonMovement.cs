@@ -26,11 +26,9 @@ public class ThirdPersonMovement : MonoBehaviour
 
     private Vector3 direction = Vector3.zero;
 
-<<<<<<< HEAD
-    //Haben hier auch verschieden Versionen vom springen eingebaut. Dadurch das keine geklappt hat haben wir sie jedoch immer entfernt damit der Code weiterhin sauber und übersichtlich für uns bleibt.
-=======
+
     private Animator animator;
->>>>>>> seda
+
 
     private void Start()
     {
