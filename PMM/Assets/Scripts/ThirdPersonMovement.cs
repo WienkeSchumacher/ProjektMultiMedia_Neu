@@ -26,9 +26,7 @@ public class ThirdPersonMovement : MonoBehaviour
 
     private Vector3 direction = Vector3.zero;
 
-
     private Animator animator;
-
 
     private void Start()
     {

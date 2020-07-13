@@ -13,7 +13,10 @@ public class CheckRain : MonoBehaviour
 
     bool isInSafeArea;
 
-   
+   void Start()
+    {
+        cat = GameObject.Find("cat");
+    }
 
     // Update is called once per frame
     void Update()
@@ -34,4 +37,11 @@ public class CheckRain : MonoBehaviour
         }
 
     }
-}
+
+    //void OnDrawGizmosSelected()
+    //{
+    //    Gizmos.color = Color.yellow;
+    //    Gizmos.DrawSphere(transform.position, safeRadius);
+    //}
+
+    }
