@@ -40,7 +40,7 @@ public class PlayerHealth : MonoBehaviour
 
     void TakeDamage()
     {
-        currentHealth -= Time.deltaTime * 2;
+        currentHealth -= Time.deltaTime * 4;
 
         healthBar.SetHealth(currentHealth);
 
